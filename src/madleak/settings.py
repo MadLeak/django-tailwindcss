@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-be$@w@28r*r90wh2r3r5ui-y*f^9!kez9kivol)j@v$h@=41dt'
+SECRET_KEY = 'django-insecure-@l2rtp=v^o(wmd9wg0!l^(-l7=k%gc!s^_p3me_j%o$dl_56s0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'madleak.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -116,12 +116,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_FILES_DIR = [
-    BASE_DIR / 'static',
+STATICFILES_DIRS = [
+    # C:\LearningRepos\django-tailwindcss\src\static
+    BASE_DIR / 'static/',
 ]
-print(STATIC_FILES_DIR)
+
 STATIC_ROOT = BASE_DIR.parent / 'local-cdn' / 'static'
-#STATIC_ROOT = os.path.join(str(BASE_DIR.parent), 'local-cdn', 'static')
+# STATIC_ROOT = os.path.join(str(BASE_DIR.parent), 'local-cdn' , 'static')
 
 
 # Default primary key field type

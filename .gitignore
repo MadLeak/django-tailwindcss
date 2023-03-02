@@ -130,3 +130,9 @@ dmypy.json
 
 # local cdn folder
 local-cdn/
+
+# node modules folder
+node_modules/
+
+# yarn files and directories
+yarn.lock

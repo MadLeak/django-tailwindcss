@@ -1,4 +1,4 @@
-```
+```bash
 python -m pip install -r  requirements.txt
 
 env/bin/python -m pip install requirements.txt

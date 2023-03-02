@@ -17,14 +17,19 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path
 
+# Importing views
+from . import views
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', views.home_view, name='home'),
+    path('admin/', admin.site.urls, name='admin'),
 ]
 
-if settings.DEBUG:
-    # Do not do this in prod
+if settings.DEBUG:  # Don't do this in production mode
+
+    # Importing the static function from the django.conf.urls.static module.
     from django.conf.urls.static import static
-    
+
     # Adding the static files to the urlpatterns.
     urlpatterns.extend(
         static(
@@ -32,4 +37,3 @@ if settings.DEBUG:
             document_root=settings.STATIC_ROOT
         )
     )
-    print(urlpatterns)  
